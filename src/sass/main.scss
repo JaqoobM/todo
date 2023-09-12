@@ -95,13 +95,13 @@ body {
 		line-height: 7rem;
 		width: 100%;
 		text-decoration: none;
-		color: #fff;
-		outline: none;
+		color: #ffffff;
+		-webkit-tap-highlight-color: transparent;
 
-		:active {
-			color: #000;
-			outline-color: red;
-			background-color: #fff;
+		&:active {
+			color: #fb8f01;
+			outline-color: none;
+			background-color: #ffcd81;
 		}
 	}
 }
