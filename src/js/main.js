@@ -1,18 +1,23 @@
 const navDrawer = document.querySelector('.nav-drawer');
 const navMenu = document.querySelector('.nav__menu');
 const blur = document.querySelector('.blur');
-const checkbox = document.querySelector('.task-box__checkbox');
+const checkLabel = document.querySelectorAll('.task-box__check-label');
 
 const activeBurgerMenu = () => {
 	navDrawer.classList.toggle('nav-drawer--active');
 	blur.classList.toggle('blur--active');
 };
 
-const activeCheck = () => {
-	if (checkbox.checked == true) {
-		console.log('działa');
+const activeCheck = (e) => {
+	const label = e.target;
+	if (label.classList.contains('task-box__check-label--active')) {
+		label.classList.remove('task-box__check-label--active');
+	} else {
+		label.classList.add('task-box__check-label--active');
 	}
-}
+};
 
 navMenu.addEventListener('click', activeBurgerMenu);
-checkbox.addEventListener('click', activeCheck)
+checkLabel.forEach((x) => {
+	x.addEventListener('click', activeCheck);
+});
