@@ -14,6 +14,7 @@ html {
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.6rem;
+	overflow: hidden;
 }
 
 .nav {
@@ -21,6 +22,7 @@ body {
 		position: relative;
 		height: 5.6rem;
 		background-color: #fb8f01;
+		margin-bottom: 1rem;
 	}
 
 	&__text {
@@ -113,10 +115,64 @@ body {
 	left: 0;
 	position: absolute;
 	backdrop-filter: none;
-	z-index: 2;
+	z-index: -1;
 	transition: backdrop-filter 0.3s;
 
 	&--active {
 		backdrop-filter: blur(0.3rem);
+		z-index: 2;
+	}
+}
+
+.task-box {
+	display: flex;
+	flex-direction: column;
+
+	&__task {
+		border-radius: 1rem;
+		background-color: #ffcd81;
+		margin: 1rem 1.6rem 0;
+		padding: 1.5rem;
+		height: 3.6rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__round {
+		position: relative;
+
+		input {
+			opacity: 0;
+		}
+
+		label {
+			-webkit-tap-highlight-color: transparent;
+			position: absolute;
+			background-color: #ffffff;
+			left: 0;
+			top: 0;
+			width: 2rem;
+			height: 2rem;
+			border: 0.1rem solid #fb8f01;
+			border-radius: 100%;
+			cursor: pointer;
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-image: url('/check-icon2.svg');
+			} 
+		} 
+ 
+		input[type='checkbox']:checked + label {
+			background-color: #00b733;
+		}
+
+		input[type='checkbox']:checked + label::after {
+			opacity: 1;
+		}
 	}
 }
