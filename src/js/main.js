@@ -10,11 +10,10 @@ const activeBurgerMenu = () => {
 
 const activeCheck = (e) => {
 	const label = e.target;
-	if (label.classList.contains('task-box__check-label--active')) {
-		label.classList.remove('task-box__check-label--active');
-	} else {
-		label.classList.add('task-box__check-label--active');
-	}
+	const task = label.parentElement.parentElement
+
+	label.classList.toggle('task-box__check-label--active');
+	task.classList.toggle('task-box__task--active');
 };
 
 navMenu.addEventListener('click', activeBurgerMenu);

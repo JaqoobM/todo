@@ -1,0 +1,263 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+.nav__bar-top {
+  position: relative;
+  height: 5.6rem;
+  background-color: #fb8f01;
+  margin-bottom: 1rem;
+}
+.nav__text {
+  position: absolute;
+  font-size: 2rem;
+  color: #fff;
+  top: 1.6rem;
+  left: 1.6rem;
+}
+.nav__menu {
+  padding: 1rem;
+  position: absolute;
+  right: 0.6rem;
+  top: 0.6rem;
+  z-index: 3;
+}
+.nav__bar-bottom {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fb8f01;
+  height: 5.6rem;
+}
+.nav__circle {
+  position: absolute;
+  background-color: #00f57f;
+  height: 7rem;
+  width: 7rem;
+  bottom: 2.1rem;
+  border-radius: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.nav__icon {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.nav-drawer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fb6f00;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 15%;
+  -webkit-box-shadow: -3px 0px 21px -1px rgba(66, 68, 90, 0.42);
+  box-shadow: -3px 0px 21px -1px rgba(66, 68, 90, 0.42);
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+  z-index: 2;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.nav-drawer--active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.nav-drawer a {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 7rem;
+  width: 100%;
+  text-decoration: none;
+  color: #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-drawer a:active {
+  color: #fb8f01;
+  outline-color: none;
+  background-color: #ffcd81;
+}
+
+.blur {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  z-index: -1;
+  -webkit-transition: -webkit-backdrop-filter 0.3s;
+  transition: -webkit-backdrop-filter 0.3s;
+  transition: backdrop-filter 0.3s;
+  transition: backdrop-filter 0.3s, -webkit-backdrop-filter 0.3s;
+}
+.blur--active {
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  z-index: 2;
+}
+
+.task-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.task-box__text {
+  font-size: 1.6rem;
+}
+.task-box__task {
+  border-radius: 1rem;
+  background-color: #ffcd81;
+  margin: 1rem 1.6rem 0;
+  padding: 1.5rem;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.task-box__task--active {
+  background-color: rgba(165, 255, 129, 0.76);
+}
+.task-box__round {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+.task-box__round input {
+  opacity: 0;
+}
+.task-box__check-label {
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  background-color: #ffffff;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.1rem solid #fb8f01;
+  border-radius: 100%;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.task-box__check-label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/check-icon2.svg");
+  opacity: 1;
+}
+.task-box__check-label--active {
+  background-color: #fb8f01;
+}
+
+.create-task-box {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.create-task-box__container {
+  border-radius: 1rem;
+  width: 100%;
+  margin: 0 2rem;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.25);
+}
+.create-task-box__container p {
+  text-align: center;
+  font-size: 2rem;
+}
+.create-task-box__container label {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+.create-task-box__container input {
+  height: 3.6rem;
+  background-color: #ffcd81;
+  border: none;
+  border-radius: 1rem;
+}
+.create-task-box__container button {
+  margin-top: 2rem;
+  height: 4rem;
+  background-color: #00f57f;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+}/*# sourceMappingURL=main.css.map */

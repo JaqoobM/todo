@@ -15,8 +15,6 @@
 
      <div class="blur"></div>
 
-     <!-- @include 'nav-top.kit' -->
-
      <nav class="nav-drawer">
 
           <a href="#">Zaloguj</a>
@@ -24,9 +22,24 @@
           <a href="#">Zarejestruj</a>
 
      </nav>
+     <!-- @include 'nav-top.kit' -->
+
 
      <div class="task-box">
 
+          <div class="task-box__task">
+
+               <p class="task-box__text">Zadanie1</p>
+
+               <div class="task-box__round">
+
+                    <input class="task-box__checkbox" type="checkbox" name="checkbox" id="checkbox">
+
+                    <label class="task-box__check-label" for="checkbox"></label>
+
+               </div>
+
+          </div>
           <div class="task-box__task">
 
                <p class="task-box__text">Zadanie1</p>
@@ -44,6 +57,21 @@
      </div>
 
      <!-- @include 'nav-bottom.kit' -->
+
+     <form method="POST" class="create-task-box">
+
+          <div class="create-task-box__container">
+
+               <p>Dodaj Zadanie</p>
+
+               <label for="name">Nazwa</label>
+               <input type="text" name="name" id="name">
+
+               <button>Dodaj</button>
+
+          </div>
+
+     </form>
 
      <script src="/dist/js/main.min.js"></script>
 </body>
