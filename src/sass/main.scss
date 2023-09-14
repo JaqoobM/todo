@@ -14,16 +14,15 @@ html {
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.6rem;
-	overflow: hidden;
 }
-
-.nav {
-	&__bar-top {
-		position: relative;
-		height: 5.6rem;
-		background-color: #fb8f01;
-		margin-bottom: 1rem;
-	}
+// NAV TOP
+.navbar-top {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 5.6rem;
+	background-color: #fb8f01;
+	z-index: 1;
 
 	&__text {
 		position: absolute;
@@ -34,21 +33,21 @@ body {
 	}
 
 	&__menu {
+		position: fixed;
 		padding: 1rem;
-		position: absolute;
 		right: 0.6rem;
 		top: 0.6rem;
 		z-index: 3;
 	}
-
-	&__bar-bottom {
-		position: absolute;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		background-color: #fb8f01;
-		height: 5.6rem;
-	}
+}
+// NAV BOTTOM
+.navbar-bottom {
+	position: sticky;
+	width: 100%;
+	bottom: 0;
+	background-color: #fb8f01;
+	height: 5.6rem;
+	margin-top: 1rem;
 
 	&__circle {
 		position: absolute;
@@ -59,6 +58,12 @@ body {
 		border-radius: 100%;
 		left: 50%;
 		transform: translateX(-50%);
+		border: none;
+		transition: background-color 0.2s;
+
+		&:active {
+			background-color: #00e677;
+		}
 	}
 
 	&__icon {
@@ -68,9 +73,8 @@ body {
 		transform: translate(-50%, 50%);
 	}
 }
-
+// NAV DRAWER
 .nav-drawer {
-	position: absolute;
 	position: fixed;
 	display: flex;
 	flex-direction: column;
@@ -85,8 +89,8 @@ body {
 	-moz-box-shadow: -3px 0px 21px -1px rgba(66, 68, 90, 0.42);
 	box-shadow: -3px 0px 21px -1px rgba(66, 68, 90, 0.42);
 	transform: translateX(150%);
-	z-index: 2;
 	transition: transform 0.3s;
+	z-index: 2;
 
 	&--active {
 		transform: translateX(0);
@@ -108,13 +112,13 @@ body {
 		}
 	}
 }
-
+// BLUR EFFECT
 .blur {
+	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	position: absolute;
 	backdrop-filter: none;
 	z-index: -1;
 	transition: backdrop-filter 0.3s;
@@ -124,7 +128,7 @@ body {
 		z-index: 2;
 	}
 }
-
+// TASKS
 .task-box {
 	display: flex;
 	flex-direction: column;
@@ -155,15 +159,11 @@ body {
 		display: flex;
 		justify-content: center;
 		position: relative;
-
-		input {
-			opacity: 0;
-		}
 	}
 
 	&__check-label {
-		-webkit-tap-highlight-color: transparent;
 		position: absolute;
+		-webkit-tap-highlight-color: transparent;
 		background-color: #ffffff;
 		left: 0;
 		top: 0;
@@ -188,51 +188,66 @@ body {
 		}
 	}
 }
-
+// ADD TASK POPUP
 .create-task-box {
-	position: absolute;
+	position: fixed;
 	display: flex;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
 	justify-content: center;
 	align-items: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 0.2s;
+
+	&--active {
+		opacity: 1;
+		z-index: 4;
+	}
 
 	&__container {
-		border-radius: 1rem;
 		width: 100%;
-		margin: 0 2rem;
+		margin: 0 1.6rem;
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
+		border-radius: 1rem;
+		background-color: #fff;
 		box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.25);
+	}
 
-		p {
-			text-align: center;
-			font-size: 2rem;
-		}
+	p {
+		margin-bottom: 3rem;
+		text-align: center;
+		font-size: 2rem;
+	}
 
-		label {
-			font-size: 1.6rem;
-			margin-top: 2rem;
-		}
+	label {
+		font-size: 1.6rem;
+	}
 
-		input {
-			height: 3.6rem;
-			background-color: #ffcd81;
-			border: none;
-			border-radius: 1rem;
-		}
+	input {
+		border: none;
+		height: 3.6rem;
+		border-radius: 1rem;
+		background-color: #ffcd81;
+		padding: 0 1rem;
 
-		button {
-			margin-top: 2rem;
-			height: 4rem;
-			background-color: #00f57f;
-			border: none;
-			border-radius: 1rem;
-			font-size: 1.6rem;
-			color: #fff;
+		&:focus {
+			outline: 1px solid #fb8f01;
+			border: 1px solid #fb8f01;
 		}
+	}
+
+	button {
+		font-size: 1.6rem;
+		color: #fff;
+		margin-top: 3rem;
+		height: 4rem;
+		border-radius: 1rem;
+		border: none;
+		background-color: #00f57f;
 	}
 }
