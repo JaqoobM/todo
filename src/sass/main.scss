@@ -22,7 +22,7 @@ body {
 	width: 100%;
 	height: 5.6rem;
 	background-color: #fb8f01;
-	z-index: 1;
+	z-index: 5;
 
 	&__text {
 		position: absolute;
@@ -37,17 +37,17 @@ body {
 		padding: 1rem;
 		right: 0.6rem;
 		top: 0.6rem;
-		z-index: 3;
+		z-index: 6;
 	}
 }
 // NAV BOTTOM
 .navbar-bottom {
-	position: sticky;
+	position: fixed;
 	width: 100%;
 	bottom: 0;
 	background-color: #fb8f01;
 	height: 5.6rem;
-	margin-top: 1rem;
+	z-index: 1;
 
 	&__circle {
 		position: absolute;
@@ -90,7 +90,7 @@ body {
 	box-shadow: -3px 0px 21px -1px rgba(66, 68, 90, 0.42);
 	transform: translateX(150%);
 	transition: transform 0.3s;
-	z-index: 2;
+	z-index: 6;
 
 	&--active {
 		transform: translateX(0);
@@ -132,12 +132,20 @@ body {
 .task-box {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 6.5rem;
 
-	&__text {
-		font-size: 1.6rem;
+	&__container {
+		position: relative;
+		background-color: red;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
 	}
 
 	&__task {
+		position: absolute;
+		width: 100%;
+		-webkit-tap-highlight-color: transparent;
 		border-radius: 1rem;
 		background-color: #ffcd81;
 		margin: 1rem 1.6rem 0;
@@ -147,25 +155,32 @@ body {
 		justify-content: space-between;
 		align-items: center;
 		transition: background-color 0.2s;
+		z-index: 1;
+		cursor: pointer;
 
 		&--active {
 			background-color: rgba(165, 255, 129, 0.76);
 		}
+
+		&:hover {
+			box-shadow: 0px 0px 4px 0px rgba(66, 68, 90, 0.42);
+		}
 	}
 
 	&__round {
+		position: absolute;
 		width: 2.5rem;
 		height: 2.5rem;
 		display: flex;
 		justify-content: center;
-		position: relative;
+		z-index: 100;
 	}
 
 	&__check-label {
 		position: absolute;
 		-webkit-tap-highlight-color: transparent;
 		background-color: #ffffff;
-		left: 0;
+		right: 0;
 		top: 0;
 		width: 2.5rem;
 		height: 2.5rem;
@@ -173,6 +188,7 @@ body {
 		border-radius: 100%;
 		cursor: pointer;
 		transition: background-color 0.2s;
+		z-index: 100;
 
 		&::after {
 			content: '';
@@ -181,11 +197,16 @@ body {
 			height: 100%;
 			background-image: url('/check-icon2.svg');
 			opacity: 1;
+			z-index: 100;
 		}
 
 		&--active {
 			background-color: #fb8f01;
 		}
+	}
+
+	&__text {
+		font-size: 1.6rem;
 	}
 }
 // ADD TASK POPUP
@@ -198,16 +219,18 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: -1;
+	z-index: 4;
+	visibility: hidden;
 	opacity: 0;
-	transition: opacity 0.2s;
+	transition: visibility 0.2s, opacity 0.2s;
 
 	&--active {
 		opacity: 1;
-		z-index: 4;
+		visibility: visible;
 	}
 
 	&__container {
+		position: relative;
 		width: 100%;
 		margin: 0 1.6rem;
 		padding: 2rem;
@@ -216,6 +239,7 @@ body {
 		border-radius: 1rem;
 		background-color: #fff;
 		box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.25);
+		z-index: 40;
 	}
 
 	p {
@@ -244,10 +268,110 @@ body {
 	button {
 		font-size: 1.6rem;
 		color: #fff;
-		margin-top: 3rem;
+		margin-top: 2rem;
 		height: 4rem;
 		border-radius: 1rem;
 		border: none;
 		background-color: #00f57f;
+
+		&:active {
+			background-color: #00e677;
+		}
+	}
+
+	span {
+		padding: 1rem;
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+
+	&__info {
+		color: #fb1201;
+		margin-top: 0.5rem;
+		visibility: visible;
+	}
+}
+
+.edit-task-box {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 4;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.2s, opacity 0.2s;
+
+	&--active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__container {
+		position: relative;
+		width: 100%;
+		margin: 0 1.6rem;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		border-radius: 1rem;
+		background-color: #fff;
+		box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.25);
+		z-index: 40;
+	}
+
+	p {
+		margin-bottom: 3rem;
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	label {
+		font-size: 1.6rem;
+	}
+
+	input {
+		border: none;
+		height: 3.6rem;
+		border-radius: 1rem;
+		background-color: #ffcd81;
+		padding: 0 1rem;
+
+		&:focus {
+			outline: 1px solid #fb8f01;
+			border: 1px solid #fb8f01;
+		}
+	}
+
+	button {
+		font-size: 1.6rem;
+		color: #fff;
+		margin-top: 2rem;
+		height: 4rem;
+		border-radius: 1rem;
+		border: none;
+		background-color: #00f57f;
+
+		&:active {
+			background-color: #00e677;
+		}
+	}
+
+	span {
+		padding: 1rem;
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+
+	&__info {
+		color: #fb1201;
+		margin-top: 0.5rem;
+		visibility: visible;
 	}
 }

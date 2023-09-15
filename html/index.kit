@@ -14,6 +14,7 @@
 <body>
      <div class="blur"></div>
 
+     <!-- POPUP -->
      <form method="POST" class="create-task-box ">
 
           <div class="create-task-box__container">
@@ -22,8 +23,29 @@
 
                <label for="name">Nazwa</label>
                <input type="text" name="name" id="name">
+               <p class="create-task-box__info"></p>
 
                <button>Dodaj</button>
+
+               <span class="create-task-box__btn-close"><img src="close-icon.svg" alt="Przycisk zamnkij"></span>
+
+          </div>
+
+     </form>
+
+     <form method="POST" class="edit-task-box">
+
+          <div class="edit-task-box__container">
+
+               <p>Edytuj zadanie</p>
+
+               <label for="name">Nazwa</label>
+               <input type="text" name="name" id="name">
+               <p class="edit-task-box__info"></p>
+
+               <button>Dodaj</button>
+
+               <span class="edit-task-box__btn-close"><img src="close-icon.svg" alt="Przycisk zamnkij"></span>
 
           </div>
 
@@ -39,183 +61,30 @@
      </nav>
      <!-- @include 'nav-top.kit' -->
 
-
      <div class="task-box">
 
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
+          <div class="task-box__constainer">
+
+               <div class="task-box__task">
+
+                    <p class="task-box__text">Zadanie1</p>
+                    
+               </div>
                
                <div class="task-box__round">
-                   
+
                     <span class="task-box__check-label" for="checkbox"></span>
+
                </div>
+
           </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          <div class="task-box__task">
-               <p class="task-box__text">Zadanie1</p>
-               
-               <div class="task-box__round">
-                   
-                    <span class="task-box__check-label" for="checkbox"></span>
-               </div>
-          </div>
-          
+
+
      </div>
 
-     <!-- @include 'nav-bottom.kit' -->
 
-     
+
+     <!-- @include 'nav-bottom.kit' -->
 
      <script src="/dist/js/main.min.js"></script>
 </body>
