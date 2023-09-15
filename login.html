@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>ToDoApp</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="/dist/css/main.min.css">
+</head>
+
+<body>
+     <div class="blur"></div>
+
+
+     <nav class="nav-drawer">
+
+          <a href="/register.html">Zarejestruj</a>
+          <a href="/index.html">Strona główna</a>
+     </nav>
+
+     <nav class="navbar-top">
+
+     <p class="navbar-top__text">ToDoApp</p>
+
+</nav>
+
+<img class="navbar-top__menu" src="menu-icon.svg" alt="" srcset="">
+
+     <form class="form" method="POST">
+
+          <div class="form__box">
+
+               <div class="form__box-email">
+                    <label class="form__box-label" for="email">Email</label>
+                    <input class="form__box-input" type="text" name="email" id="email">
+               </div>
+
+               <div class="form__box-password">
+                    <label class="form__box-label" for="password">Hasło</label>
+                    <input class="form__box-input" type="text" name="password" id="password">
+                    <p class="form__box-text"></p>
+               </div>
+
+               <button class="form__box-btn">Zaloguj</button>
+
+          </div>
+
+     </form>
+
+     <script src="/dist/js/main.min.js"></script>
+</body>
+
+</html>

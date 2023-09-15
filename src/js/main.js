@@ -42,7 +42,7 @@ const showAddPopup = () => {
 const showEditPopup = () => {
 	editTaskBox.classList.add('edit-task-box--active');
 	blur.classList.add('blur--active');
-	blur.style.zIndex = '';
+	blur.style.zIndex = 4;
 
 	bodyStop();
 };
@@ -58,9 +58,9 @@ const closePopup = () => {
 	bodyStop();
 };
 
-navMenu.addEventListener('click', activeBurgerMenu);
-closeBtn.addEventListener('click', closePopup);
-closeBtnEdit.addEventListener('click', closePopup);
-addBtn.addEventListener('click', showAddPopup);
-taskCheckbox.forEach((x) => x.addEventListener('click', activeCheck));
-task.forEach((x) => x.addEventListener('click', showEditPopup));
+navMenu?.addEventListener('click', activeBurgerMenu);
+closeBtn?.addEventListener('click', closePopup);
+closeBtnEdit?.addEventListener('click', closePopup);
+addBtn?.addEventListener('click', showAddPopup);
+taskCheckbox?.forEach((x) => x.addEventListener('click', activeCheck));
+task?.forEach((x) => x.addEventListener('click', showEditPopup));

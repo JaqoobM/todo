@@ -125,7 +125,7 @@ body {
 
 	&--active {
 		backdrop-filter: blur(0.3rem);
-		z-index: 2;
+		z-index: 6;
 	}
 }
 // TASKS
@@ -348,5 +348,68 @@ body {
 		color: #fb1201;
 		margin-top: 0.5rem;
 		visibility: visible;
+	}
+}
+
+.form {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__box {
+		width: 100%;
+		margin: 0 1.6rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__box-email {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__box-label {
+		font-size: 1.6rem;
+	}
+
+	&__box-input {
+		border: none;
+		height: 3.6rem;
+		border-radius: 1rem;
+		background: #ffcd81;
+		padding: 1rem;
+
+		&:focus {
+			outline: 1px solid #fb8f01;
+			border: 1px solid #fb8f01;
+		}
+	}
+
+	&__box-password {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__box-btn {
+		font-size: 1.6rem;
+		border-radius: 1rem;
+		margin-top: 5rem;
+		height: 4rem;
+		border: none;
+		color: #fff;
+		background-color: #00f57f;
+	}
+
+	&__box-text {
+		text-align: center;
+		color: #fb1201;
+		margin-top: 1rem;
+		font-size: 1.3rem;
 	}
 }
