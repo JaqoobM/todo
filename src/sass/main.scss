@@ -129,84 +129,59 @@ body {
 	}
 }
 // TASKS
-.task-box {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 6.5rem;
-
-	&__container {
-		position: relative;
-		background-color: red;
-		width: 100%;
-		height: 100%;
-		z-index: 100;
-	}
+.tasks {
+	margin: 1rem 1.6rem 10rem;
 
 	&__task {
-		position: absolute;
-		width: 100%;
-		-webkit-tap-highlight-color: transparent;
+		overflow: hidden;
+		position: relative;
 		border-radius: 1rem;
-		background-color: #ffcd81;
-		margin: 1rem 1.6rem 0;
-		padding: 1.5rem;
 		height: 4rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		transition: background-color 0.2s;
-		z-index: 1;
-		cursor: pointer;
+		margin-top: 1rem;
+	}
 
-		&--active {
-			background-color: rgba(165, 255, 129, 0.76);
-		}
+	&__task-bar {
+		position: absolute;
+		background-color: #ffcd81;
+		width: 100%;
+		height: 100%;
 
-		&:hover {
-			box-shadow: 0px 0px 4px 0px rgba(66, 68, 90, 0.42);
+		&--color {
+			background-color: #00f57f;
 		}
 	}
 
-	&__round {
-		position: absolute;
-		width: 2.5rem;
-		height: 2.5rem;
-		display: flex;
-		justify-content: center;
-		z-index: 100;
+	&__task-text {
+		line-height: 4rem;
+		margin-left: 1rem;
 	}
 
-	&__check-label {
+	&__task-checkbox {
 		position: absolute;
-		-webkit-tap-highlight-color: transparent;
-		background-color: #ffffff;
 		right: 0;
-		top: 0;
-		width: 2.5rem;
-		height: 2.5rem;
-		border: 0.1rem solid #fb8f01;
+		top: 50%;
+		transform: translateY(-50%);
 		border-radius: 100%;
-		cursor: pointer;
-		transition: background-color 0.2s;
-		z-index: 100;
+		border: 0.1rem solid #fb8f01;
+		margin-right: 1rem;
+		background-color: #fff;
+		height: 2.5rem;
+		width: 2.5rem;
+
+		&--color {
+			background-color: #fb8f01;
+		}
 
 		&::after {
 			content: '';
 			position: absolute;
-			width: 100%;
-			height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
 			background-image: url('/check-icon2.svg');
-			opacity: 1;
 			z-index: 100;
 		}
-
-		&--active {
-			background-color: #fb8f01;
-		}
-	}
-
-	&__text {
-		font-size: 1.6rem;
 	}
 }
 // ADD TASK POPUP

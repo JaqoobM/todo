@@ -1,12 +1,12 @@
 const navDrawer = document.querySelector('.nav-drawer');
 const navMenu = document.querySelector('.navbar-top__menu');
 const blur = document.querySelector('.blur');
-const checkLabel = document.querySelectorAll('.task-box__check-label');
+const taskCheckbox = document.querySelectorAll('.tasks__task-checkbox');
 const addBtn = document.querySelector('.navbar-bottom__circle');
 const body = document.querySelector('body');
 const createTaskBox = document.querySelector('.create-task-box');
 const closeBtn = document.querySelector('.create-task-box__btn-close');
-const task = document.querySelectorAll('.task-box__task');
+const task = document.querySelectorAll('.tasks__task-bar');
 const editTaskBox = document.querySelector('.edit-task-box');
 const closeBtnEdit = document.querySelector('.edit-task-box__btn-close');
 
@@ -25,10 +25,10 @@ const activeBurgerMenu = () => {
 };
 
 const activeCheck = (e) => {
-	const label = e.target;
-	const task = label.parentElement.parentElement;
-	label.classList.toggle('task-box__check-label--active');
-	task.classList.toggle('task-box__task--active');
+	const checkbox = e.target;
+	const task = checkbox.parentElement.children[0];
+	checkbox.classList.toggle('tasks__task-checkbox--color');
+	task.classList.toggle('tasks__task-bar--color');
 };
 
 const showAddPopup = () => {
@@ -62,5 +62,5 @@ navMenu.addEventListener('click', activeBurgerMenu);
 closeBtn.addEventListener('click', closePopup);
 closeBtnEdit.addEventListener('click', closePopup);
 addBtn.addEventListener('click', showAddPopup);
-checkLabel.forEach((x) => x.addEventListener('click', activeCheck));
+taskCheckbox.forEach((x) => x.addEventListener('click', activeCheck));
 task.forEach((x) => x.addEventListener('click', showEditPopup));
