@@ -9,6 +9,7 @@ const closeBtn = document.querySelector('.create-task-box__btn-close');
 const task = document.querySelectorAll('.tasks__task-bar');
 const editTaskBox = document.querySelector('.edit-task-box');
 const closeBtnEdit = document.querySelector('.edit-task-box__btn-close');
+const addBtnLarge = document.querySelector('.tasks__button');
 
 const bodyStop = () => {
 	if (body.style.overflow == 'hidden') {
@@ -62,5 +63,6 @@ navMenu?.addEventListener('click', activeBurgerMenu);
 closeBtn?.addEventListener('click', closePopup);
 closeBtnEdit?.addEventListener('click', closePopup);
 addBtn?.addEventListener('click', showAddPopup);
+addBtnLarge?.addEventListener('click', showAddPopup);
 taskCheckbox?.forEach((x) => x.addEventListener('click', activeCheck));
 task?.forEach((x) => x.addEventListener('click', showEditPopup));
