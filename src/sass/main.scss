@@ -130,7 +130,7 @@ body {
 }
 // TASKS
 .tasks {
-	margin: 1rem 1.6rem 10rem;
+	margin: 1rem 1.6rem 3rem;
 
 	&__task {
 		overflow: hidden;
@@ -182,6 +182,15 @@ body {
 			background-image: url('/check-icon2.svg');
 			z-index: 100;
 		}
+	}
+}
+.completed-tasks {
+	margin-bottom: 10rem;
+
+	&__task-bar {
+		// text-decoration: line-through;
+		background-color: #ffcd81c7;
+		color: #808080;
 	}
 }
 // ADD TASK POPUP
@@ -413,3 +422,5 @@ body {
 		font-size: 1.3rem;
 	}
 }
+
+
